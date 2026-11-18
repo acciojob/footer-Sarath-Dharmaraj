@@ -1,1 +1,169 @@
-/* your code here */
+/* --- Global Reset --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  /* Pushes footer to the bottom if the page is empty */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* --- Footer Container --- */
+footer {
+  background: #000000; /* Dark background matching the design */
+  width: 100%;
+}
+
+footer .content {
+  max-width: 1100px;
+  margin: auto;
+  padding: 50px 30px;
+}
+
+/* --- Top Section (Logo & Media) --- */
+footer .content .top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.logo-details .logo_name {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.top .media-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.top .media-icons a {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.top .media-icons a:hover {
+  opacity: 0.8;
+}
+
+/* Social Media Brand Colors */
+.top .media-icons a:nth-child(1) { background: #4267B2; } /* Facebook */
+.top .media-icons a:nth-child(2) { background: #1DA1F2; } /* Twitter */
+.top .media-icons a:nth-child(3) { background: #E1306C; } /* Instagram */
+.top .media-icons a:nth-child(4) { background: #0077B5; } /* LinkedIn */
+.top .media-icons a:nth-child(5) { background: #FF0000; } /* YouTube */
+
+
+/* --- Link Boxes Section --- */
+footer .content .link-boxes {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.link-boxes .box {
+  width: calc(100% / 4 - 20px);
+}
+
+.link-boxes .box .link_name {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+/* Custom Underline for Headings */
+.link-boxes .box .link_name::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 35px;
+  background: #fff;
+}
+
+.link-boxes .box li {
+  margin: 15px 0;
+}
+
+.link-boxes .box li a {
+  color: #cccccc;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.link-boxes .box li a:hover {
+  color: #ffffff;
+}
+
+/* --- Bottom Details (Copyright & Policy) --- */
+footer .bottom-details {
+  background: #2a2c35; 
+  padding: 20px 0;
+}
+
+footer .bottom-details .bottom_text {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-details .bottom_text span,
+.bottom-details .bottom_text a {
+  color: #a8a8a8;
+  font-size: 14px;
+}
+
+.bottom-details .bottom_text a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* --- Responsiveness (Media Queries) --- */
+
+/* Tablets */
+@media (max-width: 900px) {
+  footer .content .link-boxes {
+    gap: 30px;
+  }
+  .link-boxes .box {
+    width: calc(100% / 2 - 20px); 
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 600px) {
+  footer .content .top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .link-boxes .box {
+    width: 100%;
+  }
+  footer .bottom-details .bottom_text {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
